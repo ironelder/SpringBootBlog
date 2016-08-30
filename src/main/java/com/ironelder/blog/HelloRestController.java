@@ -13,7 +13,7 @@ public class HelloRestController {
     @Autowired
     private HelloDao helloDao;
 
-    @RequestMapping("/add")
+    @RequestMapping("/helloadd")
     public Hello add(Hello hello) {
 
         Hello helloData = helloDao.save(hello);
@@ -21,7 +21,7 @@ public class HelloRestController {
         return helloData;
     }
 
-    @RequestMapping("/list")
+    @RequestMapping("/hellolist")
     public List<Hello> list(Model model) {
 
         List<Hello> helloList = helloDao.findAll();
