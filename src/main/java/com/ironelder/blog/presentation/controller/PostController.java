@@ -1,5 +1,7 @@
-package com.ironelder.blog;
+package com.ironelder.blog.presentation.controller;
 
+import com.ironelder.blog.domain.model.entity.Post;
+import com.ironelder.blog.infrastructure.dao.PostDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 /**

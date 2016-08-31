@@ -1,5 +1,7 @@
-package com.ironelder.blog;
+package com.ironelder.blog.presentation.controller;
 
+import com.ironelder.blog.infrastructure.dao.HelloDao;
+import com.ironelder.blog.domain.model.entity.Hello;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,5 +1,6 @@
-package com.ironelder.blog;
+package com.ironelder.blog.application.configuration;
 
+import com.ironelder.blog.SpringBootBlogApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 

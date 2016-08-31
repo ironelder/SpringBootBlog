@@ -1,4 +1,4 @@
-package com.ironelder.blog;
+package com.ironelder.blog.presentation.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

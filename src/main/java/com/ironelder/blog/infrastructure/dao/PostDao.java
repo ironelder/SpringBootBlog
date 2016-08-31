@@ -1,5 +1,6 @@
-package com.ironelder.blog;
+package com.ironelder.blog.infrastructure.dao;
 
+import com.ironelder.blog.domain.model.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

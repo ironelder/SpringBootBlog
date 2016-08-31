@@ -1,4 +1,4 @@
-package com.ironelder.blog;
+package com.ironelder.blog.domain.model.entity;
 
 import lombok.Getter;
 import lombok.Setter;

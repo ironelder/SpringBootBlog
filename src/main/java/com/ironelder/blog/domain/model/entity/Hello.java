@@ -1,4 +1,4 @@
-package com.ironelder.blog;
+package com.ironelder.blog.domain.model.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
