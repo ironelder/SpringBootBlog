@@ -26,6 +26,9 @@ public class Post implements Serializable {
     @GeneratedValue
     private Long id;
 
+    String userId;
+    String name;
+
     @NotNull
     @NotEmpty
     @Column(name = "title", nullable = false)
@@ -39,6 +42,7 @@ public class Post implements Serializable {
     @Column(columnDefinition = "text")
     private String content;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    String _csrf;
+
     LocalDateTime regDate;
 }

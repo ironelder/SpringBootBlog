@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Hello Spring Blog</title>
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.5/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webjars/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/webjars/origoni-startbootstrap-clean-blog/1.0.3/css/clean-blog.min.css">
+    <title>Login</title>
 </head>
 <body>
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -36,18 +35,10 @@
                     <a href="/post/write">Write Post</a>
                 </li>
                 <li>
-                    <a href="https://github.com/origoni/Spring-Blog">Spring-Blog GitHub</a>
+                    <a href="/connect">Connections</a>
                 </li>
                 <li>
                     <a href="http://millky.com/@origoni/folder/30/post/list">자바 블로그 개발하기</a>
-                </li>
-                <li>
-                    <c:if test="${user!=null}">
-                        <form action="/user/logout" method="post">
-                            <button type="submit" class="btn">Disconnect</button>
-                            <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        </form>
-                    </c:if>
                 </li>
             </ul>
         </div>
@@ -56,43 +47,33 @@
     <!-- /.container -->
 </nav>
 
-<!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
 <header class="intro-header" style="background-image: url('/images/background.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1><c:out value="${post.title}" escapeXml="true"></c:out></h1>
-                    <h2 class="subheading"><c:out value="${post.subtitle}" escapeXml="true"></c:out></h2>
-                    <span class="meta">Posted by <a href="#">${post.name}</a> on ${post.regDate}</span>
+                <div class="page-heading">
+                    <h1>Login</h1>
+                    <hr class="small">
+                    <span class="subheading">Connect to Facebook</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                ${post.content}
-            </div>
-        </div>
+<div class="container">
+    <h3>Connect to Facebook API v2.3</h3>
 
-        <div class="pull-right">
-            <a href="/post/${post.id}/edit">
-                <button type="button" class="btn btn-warning">Edit</button>
-            </a>
-            <a href="/post/${post.id}/delete" onclick="if(!confirm('진심이에요?')){return false;}">
-                <button type="button" class="btn btn-danger">Delete</button>
-            </a>
+    <form action="/signin/facebook" method="POST">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <div class="formInfo">
+            <p>You aren't connected to Facebook yet. Click the button to connect this application with your Facebook account.</p>
         </div>
-    </div>
-</article>
-
-<hr>
+        <p>
+            <button type="submit">Connect to Facebook</button>
+        </p>
+    </form>
+</div>
 
 <!-- Footer -->
 <footer>
@@ -132,8 +113,5 @@
 </footer>
 
 <script src="/webjars/jquery/2.1.3/dist/jquery.min.js"></script>
-<script src="/webjars/bootstrap/3.3.5/dist/js/bootstrap.min.js"></script>
-</body>
+<script src="/webjars/bootstrap/3.3.5/dist/js/bootstrap.min.js"></script></body>
 </html>
-
-

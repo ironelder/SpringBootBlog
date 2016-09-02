@@ -81,11 +81,8 @@
 </c:if>
 <form:form action="${actionUrl}" commandName="post" onsubmit="if($('#pen').html()!='<p><br></p>')$('#content').val($('#pen').html()); pen.destroy();" method="post">
   <%--<form:form action="/post/write" commandName="post" onsubmit="if($('#pen').html()!='<p><br></p>')$('#content').val($('#pen').html()); pen.destroy();" method="post">--%>
-  <c:if test="${post.id != 0}">
-    <c:if test="${post.id != null}">
-      <form:input type="hidden" path="regDate" />
-    </c:if>
-  </c:if>
+  <form:input type="hidden" path="_csrf" value="${_csrf.token}"></form:input>
+
   <form:errors path="*" cssClass="errorblock" element="div" />
 
   <form:input type="text" path="title" placeholder="Title"
